@@ -1,0 +1,91 @@
+@startuml
+
+title __INITIALSTATE's Class Diagram__\n
+      namespace nitialState {
+        class initialState.API {
+            {static} - BUCKET_KEY : String
+            - accessKey : String
+            - executor : ExecutorService
+            - gson : Gson
+            + API()
+            + createBucket()
+            + createBulkData()
+            + createData()
+            + terminate()
+        }
+      }
+    namespace nitialState {
+      class initialState.API.SameThreadExecuter {
+          + awaitTermination()
+          + execute()
+          + invokeAll()
+          + invokeAny()
+          + isShutdown()
+          + isTerminated()
+          + shutdown()
+          + shutdownNow()
+          + submit()
+      }
+    }
+    namespace nitialState {
+      class initialState.Bucket {
+          {static} - BUCKET_API_URL : String
+          - bucketKey : String
+          + Bucket()
+          + getEndpoint()
+          + getKey()
+      }
+    }
+    namespace nitialState {
+      class initialState.Cloud {
+          + Cloud()
+          + close()
+          + send()
+          - createBucket()
+      }
+    }
+    namespace nitialState {
+      class initialState.Data {
+          {static} - DATA_API_URL : String
+          - iso8601 : String
+          - key : String
+          + Data()
+          + Data()
+          + getEndpoint()
+      }
+    }
+
+    namespace nitialState {
+      class initialState.EventTask {
+          {static} - ACCEPT_VERSION_KEY : String
+          {static} - ACCEPT_VERSION_VALUE : String
+          {static} - CONTENT_TYPE_KEY : String
+          {static} - CONTENT_TYPE_VALUE : String
+          {static} - METHOD_TYPE : String
+          {static} - X_ACCESS_KEY : String
+          - accessKey : String
+          - body : String
+          - customHeaders : HashMap<String, String>
+          - endpoint : String
+          + EventTask()
+          + run()
+          - sendRequest()
+      }
+    }
+    namespace nitialState {
+      interface initialState.Events {
+          {static} + API_BASEURL : String
+          {abstract} + getEndpoint()
+      }
+    }
+  initialState.API +-down- initialState.API.SameThreadExecuter
+  initialState.API.SameThreadExecuter .up.|> java.util.concurrent.ExecutorService
+  initialState.Bucket .up.|> initialState.Events
+  initialState.Cloud o-- initialState.API : account
+  initialState.Cloud o-- initialState.Bucket : bucket
+  initialState.Data .up.|> initialState.Events
+  initialState.Data o-- T : value
+  initialState.EventTask .up.|> java.lang.Runnable
+
+
+@enduml

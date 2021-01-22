@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="tinyos">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/tinyos.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

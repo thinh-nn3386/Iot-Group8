@@ -7,7 +7,7 @@ public class Firebase implements ICloud {
 
     private LocalApp localApp;
 
-    private Firebase(){
+    public Firebase(){
         localApp = new LocalApp();
     }
 

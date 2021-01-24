@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.main.PlaceholderFragment">
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="?android:attr/listDivider" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/tempChat"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_weight="1" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="?android:attr/listDivider" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/humiChart"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_weight="1" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="?android:attr/listDivider" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lightChart"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_weight="1" />
+</LinearLayout>
+
+
+
+

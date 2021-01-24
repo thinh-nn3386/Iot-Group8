@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Iot-Group8</string>
+    <string name="tab_text_1">Node 0</string>
+    <string name="tab_text_2">Node 1</string>
+    <string name="tab_text_3">Node 2</string>
+    <string name="tab_text_4">Node 3</string>
+</resources>
